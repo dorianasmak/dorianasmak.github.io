@@ -106,18 +106,25 @@ document.getElementById('navToggle').addEventListener('click', () => {
 });
 
 // Navigation bar active highlighting
-document.querySelectorAll('section[id]').forEach(s => {
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) {
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      document.querySelector(`.nav-link[href="#${s.id}"]`)?.classList.add('active');
-    } else if (e.boundingClientRect.top > 0) {
-      const links = Array.from(document.querySelectorAll('.nav-link'));
-      const idx = links.findIndex(l => l.getAttribute('href') === `#${s.id}`);
-      if (idx > 0) {
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        links[idx - 1].classList.add('active');
-      }
-    }
-  }, { rootMargin: '0px 0px -90% 0px', threshold: 0 }).observe(s);
+const observerOptions = {
+    root: null, 
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section[id]').forEach(section => {
+    observer.observe(section);
 });
