@@ -1,4 +1,4 @@
-body {
+:root {
     --bg:       #0c1018;
     --bg-card:  #111520;
     --border:   rgba(94, 223, 255, 0.10);
@@ -7,27 +7,47 @@ body {
     --accent-2: #a78bfa;
     --text:     #ffffff;
     --text-dim: #94a3b8;
-    --mono: 'Space Mono', monospace;
-    --body: 'DM Sans', sans-serif;
+    
+    /* Typography */
+    --mono:    'Space Mono', monospace;
+    --body:    'DM Sans', sans-serif;
     --display: 'Michroma', sans-serif;
-    --intro: 'Zen Dots', sans-serif;
-    --radius: 10px;
+    --intro:   'Zen Dots', sans-serif;
+    
+    /* Layout */
+    --radius:    10px;
     --radius-sm: 10px;
 }
+
 *, *::before, *::after { 
     box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
 }
+
 html { 
     scroll-behavior: smooth; 
 }
+
 body { 
     font-family: var(--body); 
     background: var(--bg); 
     color: var(--text); 
     line-height: 1.5; 
     overflow-x: hidden; 
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: 
+        linear-gradient(90deg, rgba(94, 223, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(rgba(94, 223, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* Navbar */
@@ -423,6 +443,9 @@ body {
 
 /* Footer */
 .footer {
+    position: relative;
+    z-index: 1;
+    background: var(--bg);
     margin-top: 5rem;
     border-top: 3px solid var(--border);
     padding: 1.5rem 2rem;
