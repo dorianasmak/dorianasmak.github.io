@@ -1,15 +1,171 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta name="description" content="Dorianas Makauskas is een koele ijskou" />
-    <meta charset="utf-8">
-    <title>Dorianas Makauskas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Tycho Nunnink">
-    <link rel="stylesheet" href="style.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  </head>
-  <body>
-    <h1>Dorianas Makauskas</h1>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Dorianas Makauskas</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"      class="nav-link">Home</a></li>
+      <li><a href="#about"     class="nav-link">About</a></li>
+      <li><a href="#tools"     class="nav-link">Tools</a></li>
+      <li><a href="#languages" class="nav-link">Languages</a></li>
+      <li><a href="#projects"  class="nav-link">Projects</a></li>
+    </ul>
+
+    <!-- Dropdown for small screens -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Intro/Main Page -->
+  <section class="intro" id="home">
+    <h1 class="intro-title">
+      <span class="glitch fn" data-text="Dorianas">Dorianas</span>
+      <br>
+      <span class="glitch sn" data-text="Makauskas">Makauskas</span>
+    </h1>
+    <p class="intro-sub">Cybersecurity and design enthusiast</p>
+    <div class="intro-cta">
+      <button class="btn" id="scrollBtn" aria-label="Scroll to About section">Scroll ▼</button>
+    </div>
+  </section>
+
+  <main class="content">
+    <!-- About + Encryption-->
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <div class="cipher-controls" role="group" aria-label="Choose a cipher to encode the text">
+        <button class="cipher-btn" data-cipher="caesar">Caesar</button>
+        <button class="cipher-btn" data-cipher="rot13">ROT13</button>
+        <button class="cipher-btn" data-cipher="atbash">Atbash</button>
+        <button class="cipher-btn" data-cipher="vigenere">Vigenère</button>
+        <button class="cipher-btn" data-cipher="hex">Hex</button>
+        <button class="cipher-btn" data-cipher="binary">Binary</button>
+        <button class="cipher-btn" data-cipher="base64">Base64</button>
+        <button class="cipher-btn" data-cipher="plaintext">Plaintext</button>
+      </div>
+      <p class="cipher-hint" id="cipherHint" aria-live="polite"></p>
+      <br><br>
+      <div class="about-text" id="aboutText" aria-live="polite"></div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools" class="section">
+      <h2 class="section-title">Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">
+            <img src="Images/Github-Icon.png" alt="GitHub icon" width="30" height="30" style="border-radius:3px;object-fit:contain;">
+          </div>
+          <div><div class="tool-name">GitHub</div><div class="tool-desc">Version control</div></div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">
+            <img src="Images/Blender-Icon.png" alt="Blender icon" width="30" height="30" style="border-radius:3px;object-fit:contain;">
+          </div>  
+          <div><div class="tool-name">Blender</div><div class="tool-desc">3D modelling</div></div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">
+            <img src="Images/Wireshark-Icon.png" alt="Wireshark icon" width="30" height="30" style="border-radius:3px;object-fit:contain;">
+          </div>
+          <div><div class="tool-name">Wireshark</div><div class="tool-desc">Network analysis</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section id="languages" class="section">
+      <h2 class="section-title">Languages</h2>
+      <div class="lang-grid">
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"><span class="lang-label">HTML</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"><span class="lang-label">CSS</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"><span class="lang-label">JavaScript</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"><span class="lang-label">React</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span class="lang-label">Python</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C"><span class="lang-label">C</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"><span class="lang-label">C++</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL"><span class="lang-label">SQL</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R"><span class="lang-label">R</span></div>
+        <div class="lang-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-original.svg" alt="Haskell"><span class="lang-label">Haskell</span></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3 class="project-title">Capture the Flag (Deloitte)</h3>
+          <p class="project-desc">Finished a professional CTF hosted by Deloitte, using techniques such as reverse engineering, web exploitation, and cryptography.</p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Fuzzing Challenge (Vrije Universiteit)</h3>
+          <p class="project-desc">Used automated fuzzing techniques to discover vulnerabilities and edge cases in compiled software at a challenge run by VU Amsterdam.</p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Trello-style Project Manager</h3>
+          <p class="project-desc">A Trello-inspired kanban application built in React with drag-and-drop boards and task cards.</p>
+        </div>
+        <div class="project-card wide">
+          <div class="project-text">
+            <h3 class="project-title">Final Research Project</h3>
+            <p class="project-desc">Researched how tech giants collect and use user data. Created a locally hosted e-mailservice with a self trained neural network to filter spam.</p>
+          </div>
+          <div class="project-image-slot">
+            <img src="Images/Spamfilterresults.png" alt="Spam Filter Results">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <nav class="social-links" aria-label="Social media links">
+
+      <!-- GitHub -->
+      <a class="social-link" href="https://github.com/dorianasmak" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a class="social-link" href="https://instagram.com/dorianasmak" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+
+      <!-- Gmail -->
+      <a class="social-link" href="mailto:dorianasmakauskas@gmail.com" aria-label="Send email">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a class="social-link" href="https://linkedin.com/in/dorianas-makauskas-41a623221" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+    </nav>
+  </footer>
+  <script src="index.js"></script>
+</body>
 </html>
